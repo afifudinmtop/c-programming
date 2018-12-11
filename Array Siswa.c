@@ -21,6 +21,7 @@ int main(int argc, char const *argv[]) {
 		jumlah4 = 0;
 		int x1 = 0;
 		int x2 = 0;
+		int x3 = 0;
 		n = 20;
     {system("clear");}//Pilihan Manual/Auto
       printf("Input Manual atau Auto?\n");
@@ -123,25 +124,37 @@ int main(int argc, char const *argv[]) {
       //menentukan rata-rata dari seluruh anak
       for (int k = 1; k <= n; k++) {
         jumlah1 = jumlah1 + data[k];
-      }
-      hasil1 = (float)jumlah1/n;
-      printf("Hasil Rata-rata Seluruh Siswa %f\n", hasil1);
+      	}
+      	hasil1 = (float)jumlah1/n;
+      	printf("Hasil Rata-rata Seluruh Siswa %f\n", hasil1);
 
 			//menentukan rata-rata dari siswa gasal
 			for (int l = 1; l <= n; l=l+2) {
         jumlah2 = jumlah2 + data[l];
 				x1++;
-      }
-      hasil2 = (float)jumlah2/x1;
-      printf("Hasil Rata-rata Seluruh Siswa ID Gasal %f\n", hasil2);
+      	}
+      	hasil2 = (float)jumlah2/x1;
+      	printf("Hasil Rata-rata Seluruh Siswa ID Gasal %f\n", hasil2);
 
 			//menentukan rata-rata dari siswa genap
 			for (int m = 2; m <= n; m=m+2) {
         jumlah3 = jumlah3 + data[m];
 				x2++;
-      }
-      hasil3 = (float)jumlah3/x2;
-      printf("Hasil Rata-rata Seluruh Siswa ID Genap %f\n", hasil3);
+      	}
+      	hasil3 = (float)jumlah3/x2;
+      	printf("Hasil Rata-rata Seluruh Siswa ID Genap %f\n", hasil3);
+
+			//menentukan anak dengan nilai lebih dari sama dengan 65 (nilai>=65)
+			printf("Anak dengan nilai lebih dari sama dengan 65 (nilai>=65) :\n");
+				for (int p = 1; p <= n; p++) {
+					if (data [p] >= 65) {
+						printf(" %i,", p);
+						jumlah4 = jumlah4 + data[p];
+					}
+					x3++;
+				}
+				hasil4 = (float)jumlah4/x3;
+				printf("\nHasil Rata-rata Siswa (nilai>=65) = %f\n", hasil4);
 
 		printf("\nMau ulang lagi?\n");//Pilihan ulang lagi
 		  scanf(" %c", &ulang);
